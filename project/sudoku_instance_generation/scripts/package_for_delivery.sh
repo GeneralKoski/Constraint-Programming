@@ -19,6 +19,7 @@ mkdir -p "$STAGE_DIR/$PROJECT_NAME"
 if python3 scripts/render_report_pdf.py >/dev/null 2>&1; then
   echo "Report PDF rigenerato in report/report.pdf"
 else
+  rm -f report/report.pdf
   echo "Avviso: rendering PDF non disponibile, lo zip conterrà solo report.md"
 fi
 
