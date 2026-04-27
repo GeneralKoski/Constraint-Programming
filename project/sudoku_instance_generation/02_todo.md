@@ -101,7 +101,7 @@
 
 - [x] Scrivere una struttura per il report di progetto
 - [x] Verificare che il report finale sia di 6-10 pagine, se questo requisito verrà confermato nel testo ufficiale
-  Verifica fatta per stima: il report ha circa 2320 parole, 277 righe, 3 figure e piu tabelle; in una resa standard da report accademico rientra plausibilmente nell'intervallo 6-10 pagine. In questo ambiente non e disponibile un renderer PDF per una paginazione esatta.
+  Misurazione effettiva: `report.md` renderizzato con pandoc + weasyprint produce un PDF di 9 pagine, dentro il range 6-10. Lo script `scripts/render_report_pdf.py` riproduce la stessa misura on demand; il PDF è gitignored ma viene rigenerato automaticamente da `package_for_delivery.sh` prima dello zip.
 - [x] Documentare le scelte di modellazione
 - [x] Documentare la strategia di unicità e il confronto tra le alternative
 - [x] Documentare le strategie di rimozione degli indizi e l'analisi tempo vs indizi
