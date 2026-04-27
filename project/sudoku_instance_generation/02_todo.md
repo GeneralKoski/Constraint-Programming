@@ -90,7 +90,8 @@
 ## Esperimenti
 
 - [x] Preparare un benchmark di puzzle generati a partire dal Kaggle dataset
-- [ ] Eseguire tutti gli esperimenti con timeout di 5 minuti per test, se questo requisito verrà confermato nel testo ufficiale
+- [x] Eseguire tutti gli esperimenti con timeout di 5 minuti per test, se questo requisito verrà confermato nel testo ufficiale
+  Eseguiti con `--timeout 300`: benchmark MiniZinc su `data/test/benchmark_instances.json` e benchmark completo della pipeline (`run_full_benchmark.py`) sui 20 casi Kaggle campionati.
 - [x] Registrare tempi di esecuzione e comportamento del solver
 - [x] Confrontare almeno due varianti del modello o del workflow
 - [x] Riassumere i principali risultati empirici
@@ -99,7 +100,8 @@
 ## Report e Preparazione all'Orale
 
 - [x] Scrivere una struttura per il report di progetto
-- [ ] Verificare che il report finale sia di 6-10 pagine, se questo requisito verrà confermato nel testo ufficiale
+- [x] Verificare che il report finale sia di 6-10 pagine, se questo requisito verrà confermato nel testo ufficiale
+  Verifica fatta per stima: il report ha circa 2320 parole, 277 righe, 3 figure e piu tabelle; in una resa standard da report accademico rientra plausibilmente nell'intervallo 6-10 pagine. In questo ambiente non e disponibile un renderer PDF per una paginazione esatta.
 - [x] Documentare le scelte di modellazione
 - [x] Documentare la strategia di unicità e il confronto tra le alternative
 - [x] Documentare le strategie di rimozione degli indizi e l'analisi tempo vs indizi
