@@ -15,7 +15,7 @@ Tema del progetto:
 Il progetto include:
 
 - modelli MiniZinc
-- pipeline Python per solving, controllo di unicita e generazione
+- pipeline Python per solving, controllo di unicità e generazione
 - benchmark
 - report finale
 - packaging della consegna
@@ -76,12 +76,12 @@ bash scripts/package_for_delivery.sh
 
 ## Note pratiche
 
-- Il dataset Kaggle raw non e versionato nel repo.
-- Il file `data/solved/sample_solutions.json` e gia presente e basta per lavorare.
-- Il PDF del report e rigenerabile con `scripts/render_report_pdf.py`.
+- Il dataset Kaggle raw non è versionato nel repo.
+- Il file `data/solved/sample_solutions.json` è già presente e basta per lavorare.
+- Il PDF del report è rigenerabile con `scripts/render_report_pdf.py`.
 
 ## Stato
 
-Il progetto e tecnicamente completo. L'unico punto ancora aperto nel `TODO` e esterno al codice:
+Il progetto è tecnicamente completo. L'unico punto ancora aperto nel `TODO` è esterno al codice:
 
 - chiarire col professore la frase su `linear constraints for capacity and cost`

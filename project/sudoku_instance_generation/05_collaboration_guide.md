@@ -11,7 +11,7 @@ git clone <URL_DEL_REPO>
 cd Constraint_Programming/project/sudoku_instance_generation
 ```
 
-Se il repository e gia stato clonato:
+Se il repository è già stato clonato:
 
 ```bash
 git pull
@@ -20,11 +20,11 @@ cd project/sudoku_instance_generation
 
 ## 2. Cosa aspettarsi appena clonato
 
-Nel repository sono gia presenti:
+Nel repository sono già presenti:
 
 - modelli MiniZinc in `models/`
 - script Python in `scripts/`
-- benchmark gia eseguiti in `results/`
+- benchmark già eseguiti in `results/`
 - report markdown in `report/report.md`
 - campione di 50 griglie complete in `data/solved/sample_solutions.json`
 - zip finale di consegna `sudoku_instance_generation_delivery.zip`
@@ -95,7 +95,7 @@ python3 scripts/sudoku_pipeline.py check \
   --method counting
 ```
 
-Se questi due passano, il progetto e operativo.
+Se questi due passano, il progetto è operativo.
 
 ## 6. Comandi principali
 
@@ -167,7 +167,7 @@ bash scripts/package_for_delivery.sh
 
 ## 7. Kaggle: cosa fare davvero
 
-Il progetto usa gia `data/solved/sample_solutions.json`, quindi per lavorare sul codice non serve scaricare subito il dataset raw.
+Il progetto usa già `data/solved/sample_solutions.json`, quindi per lavorare sul codice non serve scaricare subito il dataset raw.
 
 Il raw Kaggle serve solo se vuoi:
 
@@ -175,7 +175,7 @@ Il raw Kaggle serve solo se vuoi:
 - cambiare il numero di griglie
 - rigenerare `sample_solutions.json` da zero
 
-Se hai il file `data/raw/sudoku.csv`, puoi rigenerare il campione cosi:
+Se hai il file `data/raw/sudoku.csv`, puoi rigenerare il campione così:
 
 ```bash
 python3 scripts/import_kaggle_solutions.py \
@@ -190,14 +190,14 @@ python3 scripts/import_kaggle_solutions.py \
 - `README.md`: panoramica breve del progetto
 - `02_todo.md`: stato delle task
 - `spec/project_19_notes.md`: testo trascritto della consegna
-- `scripts/sudoku_pipeline.py`: logica centrale di solving, unicita e generazione
+- `scripts/sudoku_pipeline.py`: logica centrale di solving, unicità e generazione
 - `scripts/run_full_benchmark.py`: benchmark completo
 - `scripts/render_report_pdf.py`: rendering markdown -> PDF
 - `scripts/package_for_delivery.sh`: costruzione dello zip finale
 
 ## 9. Cosa non committare
 
-Git ignora gia:
+Git ignora già:
 
 - `data/raw/sudoku.csv`
 - `data/generated/*`
@@ -226,8 +226,8 @@ Non vanno committati gli artefatti rigenerabili, salvo decisione esplicita del t
 
 ## 11. Stato attuale del progetto
 
-Attualmente il progetto e tecnicamente completo. L'unica voce rimasta aperta nel `TODO` e esterna al codice:
+Attualmente il progetto è tecnicamente completo. L'unica voce rimasta aperta nel `TODO` è esterna al codice:
 
 - chiarire col professore la frase anomala su `linear constraints for capacity and cost`
 
-Se quel punto viene confermato come errore di copia-incolla, il progetto e sostanzialmente finito.
+Se quel punto viene confermato come errore di copia-incolla, il progetto è sostanzialmente finito.

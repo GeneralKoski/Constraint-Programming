@@ -18,7 +18,7 @@ Se la specifica del progetto indica esplicitamente un dataset di soluzioni compl
 
 Il testo attuale del progetto sembra rimandare al Kaggle Sudoku Dataset pubblico:
 
-- Https://www.kaggle.com/datasets/rohanrao/sudoku
+- https://www.kaggle.com/datasets/rohanrao/sudoku
 
 Contiene soluzioni complete di Sudoku e può essere usato come sorgente di griglie complete valide da cui derivare i puzzle. Questo evita di spendere tempo del solver solo per generare nuove griglie complete e rende gli esperimenti più riproducibili.
 
