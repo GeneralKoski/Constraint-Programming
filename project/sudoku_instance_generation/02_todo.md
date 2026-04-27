@@ -3,14 +3,15 @@
 ## Chiarimenti Preliminari
 
 - [ ] Scrivere al professore per confermare l'effettivo significato del punto 1, dato che il testo ufficiale contiene un probabile errore di copia-incolla che menziona "linear constraints for capacity and cost"
-- [ ] Confermare se il dataset Kaggle è richiesto come sorgente delle griglie complete oppure se può essere sostituito da griglie complete autogenerate
+- [x] Confermare se il dataset Kaggle è richiesto come sorgente delle griglie complete oppure se può essere sostituito da griglie complete autogenerate
+  Decisione adottata: Kaggle non è obbligatorio, ma viene usato come sorgente sperimentale principale per i benchmark; la generazione interna di griglie complete resta disponibile come fallback e verifica.
 
 ## Impostazione di Base
 
 - [x] Decidere una convenzione di nomi per i modelli MiniZinc, i file dati e il materiale del report
 - [x] Raccogliere eventuali esempi del corso che possano essere riutilizzati come punto di partenza
 - [x] Copiare il testo del progetto Sudoku da `Elly/00_introduction/projects.pdf` (progetto 19) dentro `spec/`, così tutte le assunzioni restano tracciabili
-- [ ] Scaricare il Kaggle Sudoku Dataset e salvarlo in `data/raw/`
+- [x] Scaricare il Kaggle Sudoku Dataset e salvarlo in `data/raw/`
 - [x] Scrivere un piccolo loader che legga le soluzioni complete dal Kaggle dataset
 - [x] Aggiungere un `README.md` a livello di progetto che documenti come riprodurre l'intera pipeline
 
@@ -41,6 +42,7 @@
 - [x] Produrre un piccolo insieme di griglie complete di esempio
 - [x] Verificare che le griglie complete generate siano corrette dal punto di vista strutturale
 - [x] Decidere se le griglie complete generate servano solo come fallback oppure facciano parte della pipeline principale
+  Decisione adottata: pipeline principale basata su griglie complete estratte dal dataset Kaggle; il modello `sudoku_generate_full_grid.mzn` resta come fallback, validazione strutturale e sorgente autonoma di test.
 
 ## Generazione dei Puzzle
 

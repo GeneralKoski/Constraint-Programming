@@ -62,7 +62,7 @@ Questi vincoli sono *implicati* dagli `alldifferent` (le 9 cifre `1..9` sommano 
 
 ### 2.3 Generazione di griglie complete
 
-Il modello `models/sudoku_generate_full_grid.mzn` riusa la stessa struttura ma sostituisce `indomain_min` con `indomain_random`, in modo che ripetute esecuzioni con seed diversi producano griglie complete diverse. Per il progetto sono state generate 50 griglie complete distinte usando il backend Python (vedi §5), salvate in `data/solved/sample_solutions.json` e usate come sorgente per la generazione di puzzle.
+Il modello `models/sudoku_generate_full_grid.mzn` riusa la stessa struttura ma sostituisce `indomain_min` con `indomain_random`, in modo che ripetute esecuzioni con seed diversi producano griglie complete diverse. Nel progetto questo modello viene mantenuto come **fallback** e come verifica autonoma della correttezza strutturale delle griglie complete. Per gli esperimenti principali, invece, si usa un sottoinsieme di 50 soluzioni complete estratte dal **Kaggle Sudoku Dataset** (`rohanrao/sudoku`), salvate in `data/solved/sample_solutions.json` tramite uno script di import dedicato.
 
 ## 3. Controllo di Unicità
 
@@ -198,11 +198,13 @@ Il backend supporta entrambi i metodi di unicità tramite dispatch:
 
 ### 6.1 Setup
 
-- **Benchmark**: 20 griglie complete (sottoinsieme casuale delle 50 generate) × 3 strategie × 2 metodi di unicità = **120 run**.
+- **Benchmark**: 20 griglie complete (sottoinsieme casuale delle 50 estratte dal Kaggle Sudoku Dataset) × 3 strategie × 2 metodi di unicità = **120 run**.
 - **Backend**: Python (per i tempi citati). MiniZinc è verificato funzionalmente ma il numero di chiamate (1620 + per la full benchmark) lo rende lento per il prototipo.
 - **Hardware**: macOS Apple Silicon (M-series), Python 3.9.
 - **Timeout**: nessun timeout sul backend Python (puzzle 9×9 sono sempre risolvibili in ms). Il timeout di 5 minuti come da specifica è applicato in modalità MiniZinc.
 - **Seed**: 42 (riproducibile).
+
+Le griglie complete di partenza provengono da un dataset pubblico, come suggerito dalla specifica del progetto. La generazione interna di full grids resta comunque disponibile per test mirati, riproducibilità autonoma e validazione indipendente dal dataset esterno.
 
 ### 6.2 Risultati: clue minimi per strategia
 
@@ -259,7 +261,7 @@ Il progetto realizza una pipeline completa per la generazione di istanze Sudoku 
 
 **Possibili estensioni**:
 
-- estendere il dataset al Kaggle Sudoku Dataset completo (1M istanze) per generalizzare i risultati statistici;
+- estendere i benchmark a un campione molto più ampio del Kaggle Sudoku Dataset completo (1M istanze) per generalizzare meglio i risultati statistici;
 - integrare con MiniZinc-Python per ridurre l'overhead di sotto-processo;
 - implementare un metro di "difficoltà" (es. quante volte serve guess vs propagation pura) e cercare puzzle con specifica difficoltà target;
 - esplorare un approccio backtracking sulla rimozione: dopo un rifiuto, provare a "scambiare" la cella vietata con una accettata, per scendere a clue inferiori.

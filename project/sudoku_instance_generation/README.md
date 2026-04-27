@@ -18,6 +18,12 @@ Questa cartella contiene una base completa e operativa per il progetto di genera
 - `report/`: materiale per il report finale
 - `spec/`: testo del progetto e note collegate
 
+## Sorgente delle griglie complete
+
+Per i benchmark principali il progetto usa un sottoinsieme di griglie complete estratte dal **Kaggle Sudoku Dataset** (`rohanrao/sudoku`). Il file raw viene tenuto localmente in `data/raw/sudoku.csv` e non viene committato perché è grande; il file versionato `data/solved/sample_solutions.json` contiene invece il sottoinsieme estratto e usato dalla pipeline.
+
+La generazione interna tramite `models/sudoku_generate_full_grid.mzn` resta disponibile come fallback e come verifica autonoma del progetto.
+
 ## Backend disponibili
 
 Il progetto è stato impostato con due backend:
@@ -67,6 +73,16 @@ python3 scripts/compare_strategies.py \
   --seed 7
 ```
 
+### 5. Estrazione del campione dal Kaggle dataset
+
+```bash
+python3 scripts/import_kaggle_solutions.py \
+  --input data/raw/sudoku.csv \
+  --output data/solved/sample_solutions.json \
+  --limit 50 \
+  --seed 42
+```
+
 ## Esecuzione con MiniZinc
 
 Se `minizinc` è installato nel sistema, si può usare:
@@ -96,6 +112,7 @@ Questa base include:
 - Modello MiniZinc parametrico per solving
 - Modello MiniZinc per controllo di non unicità via solve-and-block
 - Script Python per solving, conteggio soluzioni, generazione e benchmark
+- Loader per estrarre un campione di griglie complete dal Kaggle Sudoku Dataset
 - Istanze di test e griglie complete iniziali
 
 Quello che resta da fare per la consegna finale è soprattutto il lavoro sperimentale esteso e la rifinitura del report.

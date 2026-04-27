@@ -143,7 +143,7 @@ Nel progetto: counting ~1.8× più veloce su Python; entrambi corretti.
 → Validazione end-to-end senza dipendere da MiniZinc, e benchmark veloce (l'overhead di startup MiniZinc è ~400ms). Non sostituisce il modello CP, lo riproduce procedurally per il controllo di unicità. Vedi report §5.1.
 
 **"Perché generare le griglie complete invece di usare solo Kaggle?"**
-→ Per autonomia: il dataset Kaggle è un'opzione, ma il modello CP `sudoku_generate_full_grid.mzn` con `indomain_random` produce griglie distinte per ogni seed. Su 50 seed otteniamo 50 griglie uniche.
+→ Per autonomia e validazione: i benchmark principali usano Kaggle come sorgente sperimentale pubblica, ma il modello CP `sudoku_generate_full_grid.mzn` resta utile come fallback, verifica strutturale e dimostrazione che il progetto non dipende esclusivamente da dati esterni.
 
 **"Cosa cambierebbe con search annotations diverse?"**
 → Con dom_w_deg si pesa la storia dei fallimenti, utile su istanze fortemente vincolate. Su Sudoku 9×9 il guadagno è marginale; su 16×16 sarebbe più evidente.
