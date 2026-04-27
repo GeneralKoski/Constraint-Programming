@@ -1,0 +1,17 @@
+# Python cache and compiled files
+__pycache__/
+.pycache/
+*.py[cod]
+
+# macOS metadata
+.DS_Store
+
+# Sudoku project: local/regenerable artifacts
+project/sudoku_instance_generation/data/raw/*
+!project/sudoku_instance_generation/data/raw/.gitkeep
+
+project/sudoku_instance_generation/data/generated/*
+!project/sudoku_instance_generation/data/generated/.gitkeep
+
+project/sudoku_instance_generation/results/*
+!project/sudoku_instance_generation/results/.gitkeep
