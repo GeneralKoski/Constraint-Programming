@@ -30,10 +30,12 @@ For experiments and for comparing the quality of the generated instances, use a 
 
 Il Prof. Dal Palù ha confermato via email l'assegnazione del progetto 19 a Martin Trajkovski (matricola 397464). Non è prevista una prenotazione formale: la scelta è considerata effettiva da quel momento. Il docente ha invitato esplicitamente a scrivere in caso di dubbi sulle specifiche.
 
-## Punto da verificare
+## Punto chiarito con il docente
 
-Il punto 1 sembra contenere un errore di copia-incolla:
+Il punto 1 della consegna riportava:
 
 > "Implement a MiniZinc model using linear constraints for capacity and cost."
 
-Questa frase è presa pari pari dal progetto 18 (Transit Line Frequency) e non ha senso applicata al Sudoku, che non ha né capacity né cost. Va chiesto al professore se l'intento era diverso (per esempio, un termine di ottimizzazione collegato al numero di clue) oppure se la frase va semplicemente ignorata.
+Questa frase era un residuo di copia-incolla dal progetto 18 (Transit Line Frequency Optimization) e non ha riferimenti applicabili al Sudoku. Il Prof. Dal Palù ha confermato via email: *"Ignora pure quella riga."*
+
+Conseguenza: il punto 1 va trattato come "modello MiniZinc che decide la soddisfacibilità del Sudoku tramite `alldifferent` su righe, colonne e blocchi", senza alcun termine di ottimizzazione lineare aggiuntivo. La minimizzazione del numero di indizi resta gestita dalla pipeline esterna come previsto dai punti 2-4.

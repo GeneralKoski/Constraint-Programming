@@ -1,30 +1,26 @@
 # Generazione di Istanze Sudoku - Note sulla Specifica
 
-## Verifiche sul Testo del Progetto
+## Punto 1 della consegna (chiarito con il docente)
 
-Due punti vanno trattati con attenzione prima di finalizzare l'implementazione:
-
-1. Il testo del progetto sembra contenere un probabile errore di copia-incolla:
+Il testo del progetto 19 contiene la frase:
 
 > "Implement a MiniZinc model using linear constraints for capacity and cost."
 
-Questa frase sembra non avere relazione con Sudoku ed è molto più coerente con il progetto 18 (Transit Line Frequency). Non dovrebbe guidare le scelte di modellazione, a meno che il professore non confermi esplicitamente che fosse previsto qualche termine di ottimizzazione.
+Era un residuo di copia-incolla dal progetto 18 (Transit Line Frequency Optimization). Il Prof. Dal Palù ha confermato via email: *"Ignora pure quella riga."*
 
-2. L'uso di un dataset esterno va chiarito.
-
-Se la specifica del progetto indica esplicitamente un dataset di soluzioni complete di Sudoku, allora è ragionevole usarlo come sorgente di input per la generazione dei puzzle. Se invece il dataset è solo suggerito, allora nel report bisogna spiegare perché è stato usato e quale ruolo ha nella pipeline.
+Il punto 1 va quindi inteso come "modello MiniZinc che decide la soddisfacibilità del Sudoku via `alldifferent`", senza alcun termine di ottimizzazione lineare aggiuntivo.
 
 ## Dataset di Riferimento
 
-Il testo attuale del progetto sembra rimandare al Kaggle Sudoku Dataset pubblico:
+La specifica del progetto rimanda al Kaggle Sudoku Dataset pubblico:
 
 - https://www.kaggle.com/datasets/rohanrao/sudoku
 
-Contiene soluzioni complete di Sudoku e può essere usato come sorgente di griglie complete valide da cui derivare i puzzle. Questo evita di spendere tempo del solver solo per generare nuove griglie complete e rende gli esperimenti più riproducibili.
+Contiene soluzioni complete di Sudoku e viene usato come sorgente di griglie complete valide da cui derivare i puzzle. Questo evita di spendere tempo del solver solo per generare nuove griglie complete e rende gli esperimenti più riproducibili. Il modello `sudoku_generate_full_grid.mzn` resta disponibile come fallback e come verifica autonoma della correttezza strutturale.
 
 ## Deliverable
 
-In base al testo attuale del progetto, la consegna finale sembra essere un unico file zip contenente:
+La consegna finale è un unico file zip contenente:
 
 - Uno o più modelli MiniZinc
 - Lo script di orchestrazione usato per gestire la pipeline di generazione
@@ -32,16 +28,14 @@ In base al testo attuale del progetto, la consegna finale sembra essere un unico
 - I risultati sperimentali
 - Un report scritto di 6-10 pagine
 
-Il report dovrebbe descrivere i modelli, le scelte implementative, la strategia di unicità, la strategia di rimozione degli indizi e i risultati sperimentali.
+Il report descrive i modelli, le scelte implementative, la strategia di unicità, la strategia di rimozione degli indizi e i risultati sperimentali.
 
 ## Vincoli Sperimentali
 
-La specifica del progetto sembra richiedere:
+La specifica del progetto richiede:
 
 - Controlli di unicità sui puzzle generati
 - Minimizzazione del numero di indizi
 - Un confronto tra diverse strategie
 - Un limite di 5 minuti per ogni test di benchmark
 - Un'analisi che colleghi il tempo di generazione al numero di indizi rimanenti
-
-Prima della stesura finale, questi punti dovrebbero essere ricontrollati sul PDF ufficiale, così il report può distinguere chiaramente tra requisiti stretti e scelte implementative.

@@ -91,7 +91,7 @@
 ## Esperimenti
 
 - [x] Preparare un benchmark di puzzle generati a partire dal Kaggle dataset
-- [x] Eseguire tutti gli esperimenti con timeout di 5 minuti per test, se questo requisito verrà confermato nel testo ufficiale
+- [x] Eseguire tutti gli esperimenti con timeout di 5 minuti per test
   Eseguiti con `--timeout 300`: benchmark MiniZinc su `data/test/benchmark_instances.json` e benchmark completo della pipeline (`run_full_benchmark.py`) sui 20 casi Kaggle campionati.
 - [x] Registrare tempi di esecuzione e comportamento del solver
 - [x] Confrontare almeno due varianti del modello o del workflow
@@ -101,7 +101,7 @@
 ## Report e Preparazione all'Orale
 
 - [x] Scrivere una struttura per il report di progetto
-- [x] Verificare che il report finale sia di 6-10 pagine, se questo requisito verrà confermato nel testo ufficiale
+- [x] Verificare che il report finale sia di 6-10 pagine
   Misurazione effettiva: `report.md` renderizzato con pandoc + weasyprint produce un PDF di 9 pagine, dentro il range 6-10. Lo script `scripts/render_report_pdf.py` riproduce la stessa misura on demand; il PDF è gitignored ma viene rigenerato automaticamente da `package_for_delivery.sh` prima dello zip.
 - [x] Documentare le scelte di modellazione
 - [x] Documentare la strategia di unicità e il confronto tra le alternative

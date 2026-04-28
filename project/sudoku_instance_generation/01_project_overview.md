@@ -4,7 +4,7 @@
 
 Il progetto si concentra sulla modellazione e sulla generazione di istanze di Sudoku con Constraint Programming, usando MiniZinc come linguaggio principale.
 
-In base alla descrizione del progetto attualmente disponibile, le istanze 9x9 generate devono:
+Secondo la specifica del progetto, le istanze 9x9 generate devono:
 
 - Avere almeno una soluzione valida
 - Avere esattamente una soluzione ammissibile (unicità)
@@ -69,7 +69,7 @@ Il passaggio avanzato più importante è verificare che il puzzle generato abbia
 
 È questo che rende il progetto significativamente più interessante del normale solving di Sudoku. Inoltre fornisce un punto teorico e pratico forte da discutere all'esame.
 
-In base al testo del progetto attualmente disponibile, un obiettivo rilevante è valutare diverse strategie per verificare l'unicità della soluzione. I principali approcci da confrontare sono:
+Come richiesto dalla specifica, un obiettivo rilevante è valutare diverse strategie per verificare l'unicità della soluzione. I principali approcci da confrontare sono:
 
 - Solve-and-block: si trova una soluzione, si aggiunge un vincolo che la proibisce, poi si cerca di nuovo. Se la seconda ricerca restituisce UNSAT, il puzzle è unico.
 - Conteggio delle soluzioni: si enumerano le soluzioni usando il flag del solver per trovare tutte le soluzioni, fermandosi non appena se ne trova una seconda.
