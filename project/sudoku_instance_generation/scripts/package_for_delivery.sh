@@ -35,8 +35,14 @@ INCLUDE=(
   "report"
   "data/solved/sample_solutions.json"
   "data/test"
+  "data/generated/final_check_generated.json"
   "results/full_benchmark.csv"
   "results/full_benchmark.json"
+  "results/benchmark_minizinc_timeout300.json"
+  "results/final_check_benchmark.json"
+  "results/generated_random.json"
+  "results/generated_density.json"
+  "results/generated_symmetry.json"
 )
 
 for item in "${INCLUDE[@]}"; do
